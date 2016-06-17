@@ -81,7 +81,7 @@ Odoo default theme structure
    * Website Builder integration
    * Basic Snippets
    * Automatic Less/Sass compiling
-   * Automatic Js and CSS minification and combination
+   * Automatic JS and CSS minification and combination
 
 .. container:: col-md-6
 
@@ -90,7 +90,7 @@ Odoo default theme structure
    * Twitter Bootstrap
    * jQuery
    * jQuery UI
-   * underscore.js
+   * Underscore.js
 
 Thinking "modular"
 ==================
@@ -99,13 +99,13 @@ An Odoo theme is not a folder containing HTML or PHP files, it’s a modular fra
 
 Using classical web design workflows, you usually code the layout of the entire page. The result of this is a “static” web page. You can update the content, of course, but your client will need you to work on making even basic changes.
 
-Creating themes for Odoo is a total change of perspective. Instead of defining the complete layout for a page, you can create blocks (snippets) at let the user choose where to “drag&drop” them, creating the page layout on their own.
+Creating themes for Odoo is a total change of perspective. Instead of defining the complete layout for a page, you can create blocks (snippets) and let the user choose where to “drag&drop” them, creating the page layout on their own.
 We call this modular design.
 
 Imagine an Odoo theme as a “list” of elements and options that you have to create and style.
 As a designer, your goal is to style these elements in order to achieve a wonderful result, regardless of where the end user chooses to place them.
 
-Let’s take a tour of our “list” elements:
+Let’s take a tour of our “list” of elements:
 
 .. row
 
@@ -148,11 +148,10 @@ Odoo's XML files, an overview
 -----------------------------
 
 Any Odoo XML file starts with encoding specifications.
-After that, you have to write your code inside a ``<data>`` tag, placed into an ``</openerp>`` tag.
+After that, you have to write your code inside a ``<data>`` tag, placed into an ``<openerp>`` tag.
 
 .. code-block:: xml
 
-   [XML]
    <?xml version="1.0" encoding="utf-8" ?>
    <openerp>
      <data>
@@ -164,7 +163,6 @@ Almost every element and option that you create has to be placed inside a ``<tem
 
 .. code-block:: xml
 
-    [XML]
     <template id="my_title" name="My title">
       <h1>This is an HTML block</h1>
       <h2 class="lead">And this is a subtitle</h2>
@@ -172,7 +170,7 @@ Almost every element and option that you create has to be placed inside a ``<tem
 
 .. important::
 
-   don't misunderstand what ``template`` means. A template tag only
+   Don't misunderstand what ``template`` means. A template tag only
    defines a piece of html code or options - but it does not
    necessarily coincide with a visual arrangement of elements.
 
@@ -182,7 +180,7 @@ the **Odoo default structure**.  In order to do that you can use
 **xpath**, **qWeb** or a combination of both.  Keep reading the
 tutorial to learn to how properly extend it with your own code.
 
-Keep reading the tutorial to learn to how properly extend it with your own code.
+Keep reading the tutorial to learn, how to properly extend it with your own code.
 
 Update your theme
 -----------------
@@ -204,7 +202,7 @@ Update your theme
 Create a theme module
 ======================
 
-Odoo’s themes are packaged like modules. Even if you are designing a very simple website for your company or client, you need to package the theme like an Odoo module.
+Odoo’s themes are packaged as modules. Even if you are designing a very simple website for your company or client, you need to package the theme as an Odoo module.
 
 ``main folder``
   Create a folder and name it like this: ``theme_`` followed by your
@@ -228,7 +226,7 @@ Odoo’s themes are packaged like modules. Even if you are designing a very simp
 .. important::
 
   Use two underscore characters at the beginning
-  and two at the end of openerp and init file names.
+  and two at the end of the ``__openerp__.py`` and ``__init__.py`` file names.
 
 The final result should be something like this:
 
@@ -320,7 +318,7 @@ To do so, create a **layout.xml** file in your **views** folder and add the defa
      </data>
    </openerp>
 
-Create a new template into the ``<data>`` tag, copy-pasting the following
+Create a new template in the ``<data>`` tag, copy-pasting the following
 code.
 
 .. code-block:: xml
@@ -501,7 +499,7 @@ This code will add a link to the main menu.
    :class: shadow-0
 
 The **sequence** attribute defines the link’s position in the top menu.
-In our example, we set the value to ``99`` in order to place it last. I you want to place it in a particular position, you have to replace the value according to your needs.
+In our example, we set the value to ``99`` in order to place it last. If you want to place it in a particular position, you have to replace the value according to your needs.
 
 As you can see inspecting the *data.xml* file in the ``website`` module, the **Home** link is set to ``10`` and the **Contact** us one is set to ``60`` by default.
 If, for example, you want to place your link in the **middle**, you can set your link’s sequence value to ``40``.
