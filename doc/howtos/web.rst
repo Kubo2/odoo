@@ -832,12 +832,12 @@ Exercise
     Create a widget whose constructor takes two parameters aside from
     ``parent``: ``product_names`` and ``color``.
 
-    * ``product_names`` should an array of strings, each one the name of a
+    * ``product_names`` should be an array of strings, each one the name of a
       product
     * ``color`` is a string containing a color in CSS color format (ie:
       ``#000000`` for black).
 
-    The widget should display the given product names one under the other,
+    The widget should display the given product names one below the other,
     each one in a separate box with a background color with the value of
     ``color`` and a border. You should use QWeb to render the HTML. Any
     necessary CSS should be in ``oepetstore/static/src/css/petstore.css``.
